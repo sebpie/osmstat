@@ -1,0 +1,15 @@
+
+Input parameters: list of mappers username, time frame, bounding box.
+
+When executed, the script downloads the changesets of every mapper in the list in the given bounding box within the given time frame. Then for each changeset, the script counts the number of nodes, way and relations involved (i.e. added, deleted and/or modified) and save these values in a file in CSV format. As manual step, I imported the file into a spreadsheet with a chart for illustration of the data.
+
+Output: csv file.
+
+Limitation: the OSM API is limited at 100 changesets per request, which leads the script to generate erroneous stats for a very active users (i.e. that users has more than 100 changesets in the given time frame).
+
+Possible improvements:
+- run the script as part of a webapp and integrate data visualisation
+- store the changeset data in a local database instead of downloading them over and over.
+- get changeset data from planet diffs instead of API.
+- breakdown stats to the added/deleted/modified level
+
